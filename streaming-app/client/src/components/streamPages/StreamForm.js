@@ -61,4 +61,5 @@ const validate = formValues => {
 export default reduxForm({
   form: 'streamForm',
   validate,
+  enableReinitialize: true,
 })(StreamForm)
