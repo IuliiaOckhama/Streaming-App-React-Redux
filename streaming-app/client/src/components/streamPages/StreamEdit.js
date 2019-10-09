@@ -10,10 +10,13 @@ class StreamEdit extends Component {
     this.props.editStream(this.props.match.params.id, formValues)
   }
   render() {
-    if (!this.props.stream) {
-      return <div>Loading...</div>
-    }
-    const { title, description } = this.props.stream
+    const {
+      stream = {
+        title: 'Loading title...',
+        description: 'Loading description...',
+      },
+    } = this.props
+    const { title, description } = stream
     return (
       <div>
         <h3>Edit a stream</h3>

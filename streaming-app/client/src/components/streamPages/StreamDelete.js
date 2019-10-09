@@ -10,8 +10,7 @@ class StreamDelete extends Component {
     this.props.fetchStream(this.props.match.params.id)
   }
   renderActions() {
-    const id = this.props.match.params.id
-    console.log(id)
+    const { id } = this.props.match.params
     return (
       <>
         <button
@@ -28,12 +27,12 @@ class StreamDelete extends Component {
   }
   renderContent() {
     if (!this.props.stream) {
-      return <b>'Loading...'</b>
+      return <b>Loading...</b>
     }
     return (
       <span>
         Are you sure you want to delete the stream with title
-        <b> {this.props.stream.title}</b>
+        <b> {this.props.stream.title}</b> ?
       </span>
     )
   }
